@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<!-- For Magento < 2.2 -->
+	<preference for="Magento\Framework\Mail\Transport" type="UdeyTech\GmailSmtpApp\Model\Transport"/>
+	<type name="UdeyTech\GmailSmtpApp\Model\Transport">
+		<plugin sortOrder="100" name="udeytechGmailSmtpAppTransport" type="UdeyTech\GmailSmtpApp\Plugin\Mail\TransportPlugin"/>
+	</type>
+
+	<!-- For Magento Eq 2.2 -->
+	<type name="Magento\Framework\Mail\TransportInterface">
+		<plugin sortOrder="100" name="udeytechGmailSmtpAppTransportInterface" type="UdeyTech\GmailSmtpApp\Plugin\Mail\TransportPlugin"/>
+	</type>
+
+	<type name="Magento\Framework\Mail\Template\TransportBuilder">
+		<plugin sortOrder="1" name="udeytechGmailSmtpAppTransportBuilder"
+				type="UdeyTech\GmailSmtpApp\Plugin\Mail\Template\TransportBuilderPlugin"/>
+	</type>
+
+	<type name="Magento\Framework\Mail\Template\TransportBuilderByStore">
+		<plugin sortOrder="1" name="udeytechGmailSmtpAppTransportBuilderByStore"
+				type="UdeyTech\GmailSmtpApp\Plugin\Mail\Template\TransportBuilderByStorePlugin"/>
+	</type>
+
+	<type name="Magento\Config\Model\Config\TypePool">
+		<arguments>
+			<argument name="environment" xsi:type="array">
+				<item name="system/gmailsmtpapp/active" xsi:type="string">1</item>
+				<item name="system/gmailsmtpapp/ssl" xsi:type="string">1</item>
+				<item name="system/gmailsmtpapp/auth" xsi:type="string">1</item>
+				<item name="system/gmailsmtpapp/smtphost" xsi:type="string">1</item>
+				<item name="system/gmailsmtpapp/smtpport" xsi:type="string">1</item>
+				<item name="system/gmailsmtpapp/username" xsi:type="string">1</item>
+				<item name="system/gmailsmtpapp/password" xsi:type="string">1</item>
+				<item name="system/gmailsmtpapp/set_reply_to" xsi:type="string">1</item>
+				<item name="system/gmailsmtpapp/set_from" xsi:type="string">1</item>
+				<item name="system/gmailsmtpapp/custom_from_email" xsi:type="string">1</item>
+				<item name="system/gmailsmtpapp/return_path_email" xsi:type="string">1</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

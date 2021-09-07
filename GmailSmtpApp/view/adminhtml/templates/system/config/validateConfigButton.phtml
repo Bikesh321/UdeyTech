@@ -1,0 +1,12 @@
+<?php /** @var $block UdeyTech\GmailSmtpApp\Block\Adminhtml\System\Config\ValidateConfigButton **/ ?>
+<?= $block->getButtonHtml() ?>
+
+<script type="text/x-magento-init">
+    {
+        "#gmailsmtpapp_debug_result_button": {
+            "udeytechGmailSmtpAppValidateConfig": {
+                "postUrl":"<?= $block->escapeUrl($block->getAdminUrl()) ?>"
+            }
+        }
+    }
+</script>

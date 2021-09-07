@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <container name="root">
+        <block class="UdeyTech\GmailSmtpApp\Block\Adminhtml\ValidateConfig" name="udeytech.smtp_validate"
+               template="UdeyTech_GmailSmtpApp::validateConfig/result.phtml" />
+    </container>
+</layout>

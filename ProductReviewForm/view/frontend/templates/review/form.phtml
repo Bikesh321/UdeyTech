@@ -1,0 +1,10 @@
+<?php /** @var $block \UdeyTech\ProductReviewForm\Override\Review\Block\Form **/ ?>
+<div class="block review-add">
+    <div class="block-title"><strong><?= $block->escapeHtml(__('Write Your Own Review')) ?></strong></div>
+<div class="block-content">
+    <div class="message info notpurchased" id="review-form">
+        <div>
+            <?= $block->escapeHtml(__('You can not add the review on this product as you have not purchased this product yet.')); ?>
+        </div>
+    </div>
+</div>
